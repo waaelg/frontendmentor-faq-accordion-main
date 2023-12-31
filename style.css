@@ -1,0 +1,100 @@
+:root {
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-pink: hsl(275, 100%, 97%);
+  --clr-grayish-purple: hsl(292, 16%, 49%);
+  --clr-dark-purple: hsl(292, 42%, 14%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("./assets/fonts/static/WorkSans-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("./assets/fonts/static/WorkSans-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Work Sans";
+  src: url("./assets/fonts/static/WorkSans-Bold.ttf");
+  font-weight: 700;
+}
+body {
+  font-family: "Work Sans";
+  background-image: url("./assets/images/background-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-color: var(--clr-light-pink);
+  line-height: 25px;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.faqs-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 3rem;
+  margin: 10rem auto 0 auto;
+  max-width: 650px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+.title {
+  color: var(--clr-dark-purple);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 3rem;
+}
+.faqs-content {
+  padding-top: 2rem;
+}
+.faqs-item {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--clr-light-pink);
+  cursor: pointer;
+}
+.faqs-item:last-child {
+  border-bottom: none;
+}
+.question {
+  color: var(--clr-dark-purple);
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.question > div {
+  width: 100%;
+}
+.question .icon {
+  background-image: url("./assets/images/icon-plus.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 31px;
+  height: 31px;
+  background-size: cover;
+}
+.answer {
+  color: var(--clr-grayish-purple);
+  display: none;
+}
+.faqs-item.active .answer {
+  display: block;
+}
+.faqs-item.active .icon {
+  background-image: url("./assets/images/icon-minus.svg");
+}
+@media only screen and (max-width: 375px) {
+  body {
+    background-image: url("./assets/images/background-pattern-mobile.svg");
+  }
+}
